@@ -10,20 +10,20 @@ const SplashScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-slate-600 justify-center items-center">
+    <View className="flex-1 bg-red-400 justify-center items-center">
       <Animatable.Text
         animation="bounceInLeft"
         duration={2000}
         className="font-bold text-4xl text-white"
       >
-        Wellcome
+        WELLCOME
       </Animatable.Text>
       <Animatable.Text
         animation="bounceInRight"
         duration={2000}
         className="font-bold text-4xl text-white"
       >
-        News APP
+        NEWS APP
       </Animatable.Text>
     </View>
   );

@@ -1,15 +1,15 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { MagnifyingGlassIcon } from "react-native-heroicons/solid";
 
-const Header = () => {
+const Header = ({ navigation }) => {
   const SearchHanlder = () => {
-    alert("Search News");
+    navigation.navigate("Search");
   };
 
   return (
-    <View className="pt-6 bg-white shadow-md mb-2">
-      <View className="mx-4 py-4 flex flex-row justify-between items-center">
-        <Text className="text-lg">Header Component</Text>
+    <View className="pt-6 bg-white mb-2" style={{ elevation: 4 }}>
+      <View className="mx-2 py-4 flex flex-row justify-between items-center">
+        <Text className="text-lg text-red-400 font-bold">Today's News</Text>
         <TouchableOpacity onPress={() => SearchHanlder()}>
           <MagnifyingGlassIcon color={"#000"} size={22} />
         </TouchableOpacity>
