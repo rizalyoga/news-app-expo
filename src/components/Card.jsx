@@ -14,7 +14,7 @@ const Card = ({ item }) => {
 
   return (
     <TouchableOpacity
-      className="my-6 relative"
+      className="my-6 relative "
       onPress={() => {
         navigation.navigate("DetailNews", { item: item });
       }}
@@ -23,7 +23,7 @@ const Card = ({ item }) => {
         source={{
           uri: item.urlToImage ? item.urlToImage : linkImageNotFound,
         }}
-        className="h-52 w-full rounded-md"
+        className="h-52 w-full rounded-md bg-white"
         resizeMethod="resize"
       />
       <Text className="font-bold text-lg mt-2 leading-5">
@@ -32,16 +32,16 @@ const Card = ({ item }) => {
       <Text className="text-slate-600 mt-1 ">
         {item.description ? item.description : description}
       </Text>
-      <View className="flex mt-1 flex-row justify-between items-center">
-        <Text className="text-slate-700 text-base">
+      <View className="flex mt-1 flex-row justify-between ">
+        <Text className="text-slate-700 text-base basis-[70%]">
           {item.author ? item.author : "Rizalyoga, Gloria"}
         </Text>
-        <Text className="text-slate-700 -mt-0">
+        <Text className="text-slate-700 -mt-0 basis-[30%] text-base text-right">
           {moment(item.publishedAt).format("MM/DD/YYYY")}
         </Text>
       </View>
 
-      <View className="absolute right-0 bg-red-400 p-2 rounded-tr-md">
+      <View className="absolute right-0 bg-red-500 p-2 rounded-tr-md">
         <Text className="text-white">{item.source.name}</Text>
       </View>
     </TouchableOpacity>

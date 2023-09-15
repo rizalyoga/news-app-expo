@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import Header from "../components/Header";
-import { getTopHeadlines } from "../../data/getDataTopHeadline";
+import { getTopHeadlines } from "../../data/getData";
 import CategoriesFilter from "../components/CategoriesFilter";
 import Card from "../components/Card";
 import Loading from "../components/Loading";

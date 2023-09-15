@@ -11,7 +11,7 @@ const Header = ({ navigation }) => {
       <View className="mx-2 py-4 flex flex-row justify-between items-center">
         <Text className="text-lg text-red-400 font-bold">Today's News</Text>
         <TouchableOpacity onPress={() => SearchHanlder()}>
-          <MagnifyingGlassIcon color={"#000"} size={22} />
+          <MagnifyingGlassIcon color={"#000"} size={28} />
         </TouchableOpacity>
       </View>
     </View>

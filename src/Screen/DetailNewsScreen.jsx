@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, Image } from "react-native-animatable";
-import Header from "../components/Header";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import HeaderSub from "../components/HeaderSub";
 import moment from "moment";
 
-const DetailNewsScreen = ({ route }) => {
+const DetailNewsScreen = ({ navigation, route }) => {
   const { item } = route.params;
 
   const description =
@@ -14,9 +14,17 @@ const DetailNewsScreen = ({ route }) => {
 
   return (
     <>
-      <Header />
+      <HeaderSub navigation={navigation} />
       <View className="flex-1 mx-2">
         <Text className="font-bold text-lg mt-2 ">{item.title}</Text>
+        <View className="flex mt-1 flex-row justify-between my-2 ">
+          <Text className="text-slate-700 basis-[70%]">
+            {item.author ? item.author : "Rizalyoga, Gloria"}
+          </Text>
+          <Text className="text-slate-700 -mt-0 basis-[30%] text-right">
+            {moment(item.publishedAt).format("MM/DD/YYYY")}
+          </Text>
+        </View>
         <Image
           source={{
             uri: item.urlToImage ? item.urlToImage : linkImageNotFound,
@@ -26,12 +34,16 @@ const DetailNewsScreen = ({ route }) => {
         <Text className="text-base">
           {item.content ? item.content : description}
         </Text>
-        <View className="my-4">
-          <Text>{item.author ? item.author : "Rizalyoga"}</Text>
-          <Text>
-            Last update : {moment(item.publishedAt).format("MM/DD/YYYY")}
-          </Text>
-        </View>
+
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("WebviewNews", { url: item.url });
+          }}
+          className="max-w-[140px] bg-red-500 px-6 py-2 rounded-md my-4"
+        >
+          <Text className="text-white text-lg text-center">Read More</Text>
+        </TouchableOpacity>
+
         <Text>Source : {item.url}</Text>
       </View>
     </>
