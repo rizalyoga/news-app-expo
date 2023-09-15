@@ -33,10 +33,10 @@ const Card = ({ item }) => {
         {item.description ? item.description : description}
       </Text>
       <View className="flex mt-1 flex-row justify-between ">
-        <Text className="text-slate-700 text-base basis-[70%]">
+        <Text className="text-slate-700 basis-[70%]">
           {item.author ? item.author : "Rizalyoga, Gloria"}
         </Text>
-        <Text className="text-slate-700 -mt-0 basis-[30%] text-base text-right">
+        <Text className="text-slate-700 -mt-0 basis-[30%] text-right">
           {moment(item.publishedAt).format("MM/DD/YYYY")}
         </Text>
       </View>
