@@ -1,6 +1,8 @@
+const API_KEY = process.env.EXPO_PUBLIC_API_KEY;
+
 export const getTopHeadlines = async (Category) => {
   const data = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=d7603bcb9ec24f268c2b3cd4bc1e6e12&category=${Category}`
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}&category=${Category}`
   );
 
   if (data.status == 200) {
@@ -12,7 +14,7 @@ export const getTopHeadlines = async (Category) => {
 
 export const getDataBasedOnKeyword = async (keyword) => {
   const data = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=d7603bcb9ec24f268c2b3cd4bc1e6e12&q=${keyword}`
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}&q=${keyword}`
   );
 
   if (data.status == 200) {

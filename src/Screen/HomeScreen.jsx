@@ -5,48 +5,13 @@ import { getTopHeadlines } from "../../data/getData";
 import CategoriesFilter from "../components/CategoriesFilter";
 import Card from "../components/Card";
 import Loading from "../components/Loading";
+import { categoryList } from "../../data/categoryList";
 
 const HomeScreen = ({ navigation }) => {
   const [dataTopHeadline, setDataTopHeadline] = useState([]);
   const [loading, setLoading] = useState(false);
   const [select, setSelect] = useState(0);
-  const [categories, setCategories] = useState([
-    {
-      id: 1,
-      name: "Top Headlines",
-      category: "general",
-    },
-    {
-      id: 5,
-      name: "Sports",
-      category: "sports",
-    },
-    {
-      id: 2,
-      name: "Business",
-      category: "business",
-    },
-    {
-      id: 3,
-      name: "Entertainment",
-      category: "entertainment",
-    },
-    {
-      id: 4,
-      name: "Health",
-      category: "health",
-    },
-    {
-      id: 6,
-      name: "Science",
-      category: "science",
-    },
-    {
-      id: 7,
-      name: "Technology",
-      category: "technology",
-    },
-  ]);
+  const categories = categoryList;
 
   useEffect(() => {
     setLoading((loading) => !loading);
